@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z Pay Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+        }
+
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            color: #ffffff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        header .welcome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        header .welcome .profile-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        header .balance {
+            margin-bottom: 20px;
+        }
+
+        header .balance h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #0277bd; /* Blue text color */
+        }
+
+        header .balance p {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        header .balance button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #0277bd; /* Blue button background */
+            color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .crypto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .crypto-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f9fafb;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .crypto-icon {
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+        }
+
+        .btc {
+            background-image: url('btc.png');
+        }
+
+        .ltc {
+            background-image: url('ltc.png');
+        }
+
+        .eth {
+            background-image: url('eth.png');
+        }
+
+        .crypto-details p {
+            margin: 0;
+        }
+
+        .crypto-change {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .positive {
+            color: green;
+        }
+
+        .negative {
+            color: red;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            padding: 15px 30px;
+            border: none;
+            background-color: #0277bd; 
+            color: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">Z Pay</div>
+            <nav>
+                <a href="#">About Us</a>
+            </nav>
+        </header>
+        <header>
+            <div class="welcome">
+                <img src="bob.jpg" alt="Profile Icon" class="profile-icon">
+                <p>Welcome, User001!</p>
+            </div>
+            <div class="balance">
+                <h2>Main (SGD)</h2>
+                <p>$0.00</p>
+            </div>
+        </header>
+        <div class="crypto-info">
+            <div class="crypto-item">
+                <div class="crypto-icon btc"></div>
+                <div class="crypto-details">
+                    <p>1.00</p>
+                    <p>$92,899</p>
+                </div>
+                <div class="crypto-change positive">▲4.2%</div>
+            </div>
+            <div class="crypto-item">
+                <div class="crypto-icon ltc"></div>
+                <div class="crypto-details">
+                    <p>1.00</p>
+                    <p>$110.51</p>
+                </div>
+                <div class="crypto-change positive">▲1.1%</div>
+            </div>
+            <div class="crypto-item">
+                <div class="crypto-icon eth"></div>
+                <div class="crypto-details">
+                    <p>1.00</p>
+                    <p>$5,072.24</p>
+                </div>
+                <div class="crypto-change negative">▼3.4%</div>
+            </div>
+        </div>
+        <footer>
+            <button class="action-button" onclick="redirectToAdd()">Add Money</button>
+            <button class="action-button" onclick="redirectToTransfer()">Transfer</button>
+        </footer>
+    </div>
+    <script>
+        function redirectToAdd() {
+            window.location.href = 'add.html';
+        }
+
+        function redirectToTransfer() {
+            window.location.href = 'transfer.html';
+        }
+    </script>
+</body>
+</html>

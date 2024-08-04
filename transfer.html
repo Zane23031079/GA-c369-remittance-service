@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            position: relative;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #0277bd;
+        }
+
+        .back-arrow:hover {
+            color: #01579b;
+        }
+
+        .transfer-container {
+            background: linear-gradient(to right, #fcfcfc, #f9fafa);
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #01579b;
+        }
+
+        .transfer-details {
+            margin-top: 20px;
+        }
+
+        .transfer-item {
+            margin: 10px 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px 0;
+            width: calc(100% - 22px); /* Adjust width to fit container */
+        }
+
+        #confirm-btn {
+            background-color: #0277bd;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #confirm-btn:disabled {
+            background-color: #b0bec5;
+            cursor: not-allowed;
+        }
+
+        #confirm-btn:hover:not(:disabled) {
+            background-color: #0277bd;
+        }
+    </style>
+</head>
+<body>
+    <a href="home.html" class="back-arrow">&#8592; Home</a>
+    <div class="transfer-container">
+        <h1>Transfer</h1>
+        <div class="transfer-details">
+            <div class="transfer-item">
+                <label for="recipient">Recipient: </label>
+                <span id="recipient">Jerome</span>
+            </div>
+            <div class="transfer-item">
+                <label for="amount">Enter Amount (SGD): </label>
+                <input type="number" id="amount" placeholder="Enter amount" step="0.01">
+            </div>
+            <div class="transfer-item">
+                <label for="convert">Convert SGD To USD </label>
+                <input type="text" id="sgd-amount" value="-" disabled>
+                <span> ➡️ </span>
+                <select id="currency">
+                    <option value="usd">USD</option>
+                </select>
+                <span id="usd-amount">-</span>
+            </div>
+            <div class="transfer-item">
+                <span id="transaction-fees">Transaction fees: $-</span>
+            </div>
+            <div class="transfer-item">
+                <span>Total Amount: </span>
+                <span id="total-amount">-</span>
+            </div>
+            <button id="confirm-btn" disabled>Confirm</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const amountInputElement = document.getElementById('amount');
+            const sgdAmountElement = document.getElementById('sgd-amount');
+            const usdAmountElement = document.getElementById('usd-amount');
+            const transactionFeesElement = document.getElementById('transaction-fees');
+            const totalAmountElement = document.getElementById('total-amount');
+            const confirmButton = document.getElementById('confirm-btn');
+
+            function updateConversion() {
+                const sgdAmount = parseFloat(amountInputElement.value);
+                if (isNaN(sgdAmount) || sgdAmount <= 0) {
+                    sgdAmountElement.value = '-';
+                    usdAmountElement.textContent = '-';
+                    transactionFeesElement.textContent = 'Transaction fees: $-';
+                    totalAmountElement.textContent = '-';
+                    confirmButton.disabled = true;
+                    return;
+                }
+                sgdAmountElement.value = sgdAmount.toFixed(2);
+                // Assume a conversion rate for example purposes
+                const conversionRate = 0.743;
+                const usdAmount = sgdAmount * conversionRate;
+                usdAmountElement.textContent = `$${usdAmount.toFixed(2)}`;
+                const transactionFees = sgdAmount * 0.001;
+                transactionFeesElement.textContent = `Transaction fees: $${transactionFees.toFixed(2)}`;
+                updateTotalAmount(usdAmount, transactionFees);
+                confirmButton.disabled = false;
+            }
+
+            function updateTotalAmount(usdAmount, transactionFees) {
+                const totalAmount = usdAmount - transactionFees;
+                totalAmountElement.textContent = `$${totalAmount.toFixed(2)}`;
+            }
+
+            amountInputElement.addEventListener('input', updateConversion);
+
+            confirmButton.addEventListener('click', function () {
+                window.location.href = 'home.html';
+            });
+
+            updateConversion(); // Initial call to set the values correctly
+        });
+    </script>
+</body>
+</html>
