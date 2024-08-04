@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ZPAY</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            width: 50px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #01579b;
+            margin: 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            padding: 40px 20px;
+        }
+
+        .about-container {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-container h2 {
+            color: #01579b;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            border: 2px solid #6200ea;
+            border-radius: 10px;
+            padding: 15px;
+            color: #6200ea;
+            margin-bottom: 20px;
+            font-size: 16px;
+            background-color: #f3e5f5;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .about-container p {
+            color: #333333;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .about-container p:last-child {
+            margin-bottom: 0;
+        }
+
+        .signup-container {
+            margin-top: 40px;
+        }
+
+        .signup-container h3 {
+            color: #01579b;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .signup-btn {
+            background-color: #0277bd;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #01579b;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ZPAY</h1>
+    </div>
+    <div class="content">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <h2>Why Pick Us?</h2>
+            <div class="highlight">
+                Our Transaction fees are only 0.2%!!<br>
+                This is much lower compared to other remittance services.
+            </div>
+            <p>
+                Our use of blockchain technology makes your transactions very transparent and safe, so don’t worry about any security concerns!
+            </p>
+            <p>
+                Super Fast Transactions, 24/7 Availability
+            </p>
+            <div class="signup-container">
+                <h3>Sign up now!</h3>
+                <button class="signup-btn" onclick="redirectToLogin()">Join ZPAY</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectToLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

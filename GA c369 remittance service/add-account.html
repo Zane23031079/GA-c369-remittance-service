@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Account</title>
+    <link rel="stylesheet" href="add-account.css">
+</head>
+<body>
+    <div class="container">
+        <main class="add-account-box">
+            <h2>Add Account</h2>
+            <form id="addAccountForm">
+                <div class="textbox">
+                    <label for="bankName">Bank Name:</label>
+                    <input type="text" id="bankName" placeholder="Enter your bank name" required>
+                </div>
+                <div class="textbox">
+                    <label for="accountNumber">Account Number:</label>
+                    <input type="text" id="accountNumber" placeholder="Enter your account number" required>
+                </div>
+                <div class="textbox">
+                    <label for="identityVerification">Identity Verification:</label>
+                    <div class="upload-box">
+                        <input type="file" id="identityVerification" accept="image/*,.pdf" required>
+                        <span class="upload-text">+</span>
+                        <p class="upload-instruction">Upload Photo or Document</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </main>
+    </div>
+    <script src="add-account.js"></script>
+</body>
+</html>
