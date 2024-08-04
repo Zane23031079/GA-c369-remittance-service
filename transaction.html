@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #0277bd;
+            font-weight: bold;
+        }
+        .transaction {
+            background: #f1f8e9;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .transaction:nth-child(2n) {
+            background: #e8f5e9;
+        }
+        .amount, .name {
+            font-size: 18px;
+            color: #0277bd;
+        }
+        .to {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #0277bd;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0277bd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Transaction History</div>
+        <div class="transaction">
+            <div class="amount">$5.45</div>
+            <div class="to">To</div>
+            <div class="name">Emily</div>
+        </div>
+        <div class="transaction">
+            <div class="amount">$2300</div>
+            <div class="to">To</div>
+            <div class="name">Jerry</div>
+        </div>
+        <div class="transaction">
+            <div class="amount">$965.62</div>
+            <div class="to">To</div>
+            <div class="name">Tom</div>
+        </div>
+        <div class="transaction">
+            <div class="amount">$1.25</div>
+            <div class="to">To</div>
+            <div class="name">Rishi</div>
+        </div>
+        <div class="transaction">
+            <div class="amount">$239.90</div>
+            <div class="to">To</div>
+            <div class="name">Beckham</div>
+        </div>
+        <a href="home.html" class="back-button">Back To Home</a>
+    </div>
+</body>
+</html>
